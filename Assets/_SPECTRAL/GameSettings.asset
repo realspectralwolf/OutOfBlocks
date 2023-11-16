@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 838929c848d1e894d90cedce958070fa, type: 3}
+  m_Name: GameSettings
+  m_EditorClassIdentifier: 
+  roundTime: 56
+  timeBetweenRounds: 5
+  crateSpawnHeight: 7
+  powerupSpawnHeight: 3
+  crateSpawnTime: 3
+  powerupSpawnTime: 12
+  finishAnimTime: 0.6
+  finishParticles: {fileID: 138758127245770213, guid: c1a875655a961cd43bb79c3e861a0e82, type: 3}
+  summaryUI: {fileID: 5965492909045965869, guid: d318eac83c93ee946a329e24d5bb45bc, type: 3}
+  crateSpawnOuterLimit:
+    min: 3.2
+    max: 7.1
+  crateSpawnInnerLimit: 0.8

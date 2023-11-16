@@ -75,9 +75,7 @@ namespace TarodevController
             HandleDirection();
             HandleGravity();
             //HandleDrag();
-            
-            if (WallMover.Instance.canPlayersMove)
-                ApplyMovement();
+            ApplyMovement();
         }
 
         #region Collisions
