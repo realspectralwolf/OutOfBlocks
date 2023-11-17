@@ -31,7 +31,7 @@ public class Spawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        timeLeftToSpawn = GameManager.Instance.Settings.crateSpawnTime;
+        timeLeftToSpawn = GameManager.Instance.Settings.initialCrateSpawnTime;
         timeLeftToPowerup = GameManager.Instance.Settings.powerupSpawnTime;
     }
 

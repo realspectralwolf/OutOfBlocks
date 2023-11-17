@@ -12,16 +12,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 838929c848d1e894d90cedce958070fa, type: 3}
   m_Name: GameSettings
   m_EditorClassIdentifier: 
-  roundTime: 56
+  roundTime: 60
   timeBetweenRounds: 5
-  crateSpawnHeight: 7
-  powerupSpawnHeight: 3
   crateSpawnTime: 3
   powerupSpawnTime: 12
   finishAnimTime: 0.6
-  finishParticles: {fileID: 138758127245770213, guid: c1a875655a961cd43bb79c3e861a0e82, type: 3}
-  summaryUI: {fileID: 5965492909045965869, guid: d318eac83c93ee946a329e24d5bb45bc, type: 3}
+  initialCrateSpawnTime: 1
+  crateSpawnHeight: 7
+  powerupSpawnHeight: 3
   crateSpawnOuterLimit:
     min: 3.2
     max: 7.1
   crateSpawnInnerLimit: 0.8
+  redColor:
+    serializedVersion: 2
+    rgba: 4288705791
+  blueColor:
+    serializedVersion: 2
+    rgba: 4290707241
+  finishParticles: {fileID: 138758127245770213, guid: c1a875655a961cd43bb79c3e861a0e82, type: 3}
+  summaryUI: {fileID: 7035192901627480148, guid: d318eac83c93ee946a329e24d5bb45bc, type: 3}
+  smashClip: {fileID: 8300000, guid: a40f814506e8a8142bfc3faee105b1ca, type: 3}
+  gateClosedClip: {fileID: 8300000, guid: ca4c7e5b9a823df4987c8166f726ec5d, type: 3}
+  crateHit: {fileID: 8300000, guid: d72a10198098dd3428c9778a90acfc22, type: 3}
+  music:
+  - {fileID: 8300000, guid: 8f5d5abc3a071e74890cb59909c13a4c, type: 3}
+  - {fileID: 8300000, guid: feaa920ba85da2544ba8d80e357342ec, type: 3}
+  - {fileID: 8300000, guid: 8572da82935c0644a85f9d83df14c170, type: 3}
+  - {fileID: 8300000, guid: 4d179c7a118d84d4ba0c2f21efa4de72, type: 3}
+  - {fileID: 8300000, guid: c152dcec98d90894e8f713fd2901978f, type: 3}

@@ -1,16 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class RoundsData : MonoBehaviour
 {
-    public static RoundsData Instance;
-    public static int[] roundsWon = { 0, 0 };
+    [SerializeField] public static RoundsData Instance { get; private set; }
+    private int[] roundsWon = { 0, 0 };
+    public int totalRounds = 0;
 
     void Awake()
     {
         if (Instance != null)
+        {
             Destroy(this.gameObject);
+            return;
+        }
 
         Instance = this;
         DontDestroyOnLoad(this.gameObject);
@@ -38,5 +43,15 @@ public class RoundsData : MonoBehaviour
         {
             return roundsWon[0];
         }
+    }
+
+    public void IncrementTotalRounds()
+    {
+        totalRounds++;
+    }
+
+    public int GetTotalRounds()
+    {
+        return totalRounds;
     }
 }

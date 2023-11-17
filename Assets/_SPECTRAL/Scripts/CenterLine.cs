@@ -29,5 +29,6 @@ public class CenterLine : MonoBehaviour
     {
         filledLine.gameObject.SetActive(true);
         filledLine.LeanMoveLocal(Vector3.zero, _animSpeed);
+        AudioManager.Instance.PlayAudioClip(GameManager.Instance.Settings.gateClosedClip);
     }
 }

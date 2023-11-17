@@ -339,7 +339,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65c9fe21a11828a4189f67b17dbf7757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smashClip: {fileID: 8300000, guid: a40f814506e8a8142bfc3faee105b1ca, type: 3}
 --- !u!4 &547590461
 Transform:
   m_ObjectHideFlags: 0
@@ -365,7 +364,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: cc8aa6ff4ed1f014ab15326de2103952, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.72
   m_Pitch: 1
@@ -574,6 +573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ba94056b46092b4fa85c69850e64b75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  totalRounds: 0
 --- !u!1001 &1858883429080608928
 PrefabInstance:
   m_ObjectHideFlags: 0

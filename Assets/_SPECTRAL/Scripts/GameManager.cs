@@ -41,8 +41,9 @@ public class GameManager : MonoBehaviour
 
         yield return new WaitForSecondsRealtime(1.5f);
 
-        Vector3 pos = Vector3.zero;
-        var losingContainer = GetGameContainerWithWorstScore();
+        RoundsData.Instance.IncrementTotalRounds();
+
+        MiniGameContainer losingContainer = GetGameContainerWithWorstScore();
         if (losingContainer == null) // tie
         {
             foreach (var gameContainer in gameContainers)
@@ -53,7 +54,6 @@ public class GameManager : MonoBehaviour
         else
         {
             losingContainer.Wall.PlayFinishAnimation();
-            pos.x = losingContainer.transform.position.x;
 
             foreach (var gameContainer in gameContainers)
             {
@@ -64,28 +64,37 @@ public class GameManager : MonoBehaviour
             }   
         }
 
-        Instantiate(Settings.summaryUI, pos, Quaternion.identity);
-        yield return new WaitForSecondsRealtime(Settings.timeBetweenRounds);
+        AudioManager.Instance.PlayAudioClip(Settings.smashClip);
+
+        var summaryPanel = Instantiate(Settings.summaryUI, Vector3.zero, Quaternion.identity);
+        summaryPanel.SetTargetLostContainer(losingContainer);
+
+        yield return new WaitForSecondsRealtime(Settings.timeBetweenRounds);        
         SceneManager.OpenGameplayScene();
     }
 
     private MiniGameContainer GetGameContainerWithWorstScore()
     {
-        MiniGameContainer highest = gameContainers[0];
-        for (int i = 0; i < gameContainers.Length; i++) 
-        {
-            if (gameContainers[i].Counter.score > highest.Counter.score)
-                highest = gameContainers[i];
-        }
-
-        if (gameContainers[0] == null) // tie
+        if (gameContainers[0].Counter.score == gameContainers[1].Counter.score) // tie
             return null;
 
-        return highest;
+        if (gameContainers[0].Counter.score > gameContainers[1].Counter.score)
+        {
+            return gameContainers[0];
+        }
+        else
+        {
+            return gameContainers[1];
+        }
     }
 
     public float GetNormalizedTimePassed()
     {
         return timePassed / Settings.roundTime;
+    }
+
+    public AudioClip GetMusicTrack()
+    {
+        return Settings.music[RoundsData.Instance.GetTotalRounds() % Settings.music.Length];
     }
 }

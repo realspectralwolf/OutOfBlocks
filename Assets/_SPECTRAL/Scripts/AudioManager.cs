@@ -11,14 +11,15 @@ public class AudioManager : MonoBehaviour
 
         Instance = this;
     }
-    public AudioClip smashClip;
-    public void PlaySmashed()
+
+    public void PlayAudioClip(AudioClip clip)
     {
-        AudioSource.PlayClipAtPoint(smashClip, transform.position);
+        AudioSource.PlayClipAtPoint(clip, transform.position);
     }
 
     public void StartGameplayMusic()
     {
+        GetComponent<AudioSource>().clip = GameManager.Instance.GetMusicTrack();
         GetComponent<AudioSource>().Play();
     }
 }
